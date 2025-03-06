@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Solución al problema usando Singleton que viene en la librería estándar de Ruby
 require 'singleton'
 
 class ConfigManager1
