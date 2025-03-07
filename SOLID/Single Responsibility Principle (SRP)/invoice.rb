@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
 class Invoice
-  def initialize(items)
+  attr_reader :items, :customer_email
+  def initialize(items, customer_email)
     @items = items
+    @customer_email = customer_email
   end
 
   def total
-    @items.sum{ |item| item[:price] * item[:quantity] }
+    items.sum
   end
 
-  def save_to_db
-    puts "Saving to DB"
+  def save_to_database
+    puts "Saving invoice with total: #{total} to database..."
   end
 
-  def print_invoice
-    puts "Invoice total: #{total}"
+  def send_email
+    puts "Sending invoice with total: #{total} to #{customer_email}..."
   end
 end
 
 # Uso de código
-invoice = Invoice.new([{price: 2000, quantity: 5}, {price: 1000, quantity: 10}])
-
-total = invoice.total
-save_to_db = invoice.save_to_db
-printer = invoice.print_invoice
+invoice = Invoice.new([100, 200, 50], "customer@example.com")
+invoice.save_to_database
+invoice.send_email
