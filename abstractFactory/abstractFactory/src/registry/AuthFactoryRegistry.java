@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
+// Registry for authentication factories
 public class AuthFactoryRegistry {
     private static final Map<String, Supplier<AuthFactory>> registry = new HashMap<>();
     static {
@@ -22,6 +23,7 @@ public class AuthFactoryRegistry {
         registry.put(type.toLowerCase(), factorySupplier);
     }
 
+    // Method for getting the factory by type
     public static AuthFactory getAuthFactory(String type) {
         Supplier<AuthFactory> factory = registry.get(type.toLowerCase());
         if (factory == null) {

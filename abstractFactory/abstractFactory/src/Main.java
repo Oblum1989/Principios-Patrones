@@ -3,11 +3,18 @@ import factory.CustomAuthFactory;
 import registry.AuthFactoryRegistry;
 import services.AuthService;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+/**
+ * Identity Management System for a company that handles different types of authentication for different users:
+1. OAuth for employees accessing with Google or Facebook.
+2. LDAP for internal administrators authenticated in an active directory.
+3. Biometrics for physical access devices with fingerprints or facial recognition.
+
+This system allows new authentication methods to be easily added in the future.
+ */
 public class Main {
     public static void main(String[] args) {
 
+        // Get the factory from the registry without modifying the code
         AuthFactory factory = AuthFactoryRegistry.getAuthFactory("oauth");
         AuthService authService = factory.createAuthService();
 
