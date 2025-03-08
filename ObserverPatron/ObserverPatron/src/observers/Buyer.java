@@ -3,6 +3,7 @@ package observers;
 import models.Product;
 import strategies.NotificationStrategy;
 
+// Buyer is the Observer class
 public class Buyer implements Observer {
     private String name;
     private NotificationStrategy notificationStrategy;

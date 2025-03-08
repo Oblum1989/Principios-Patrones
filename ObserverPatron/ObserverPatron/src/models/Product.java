@@ -1,5 +1,6 @@
 package models;
 
+// Product class
 public class Product {
     private String name;
     private String category;

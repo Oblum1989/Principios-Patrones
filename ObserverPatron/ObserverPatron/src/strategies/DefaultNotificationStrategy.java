@@ -4,6 +4,7 @@ import models.Product;
 
 import java.util.List;
 
+// DefaultNotificationStrategy class implements NotificationStrategy interface and has the shouldNotify method
 public class DefaultNotificationStrategy implements NotificationStrategy {
     private List<String> interestedCategories;
     private List<String> interestedNames;
